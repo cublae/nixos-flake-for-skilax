@@ -13,8 +13,8 @@ let
 in
 {
   networking.firewall.extraCommands = ''
-    ip46tables -t mangle -I POSTROUTING -p tcp --dport 443 -m connbytes --connbytes-dir=original --connbytes-mode=packets --connbytes 1:6 -m mark ! --mark 0x40000000/0x40000000 -j NFQUEUE --queue-num 200 --queue-bypass
-    ip46tables -t mangle -A POSTROUTING -p udp -m multiport --dports 443,50000:50100 -m mark ! --mark 0x40000000/0x40000000 -j NFQUEUE --queue-num 200 --queue-bypass
+    ip46tables -t mangle -I POSTROUTING -p tcp --dport 80,443,${GameFilter} -m connbytes --connbytes-dir=original --connbytes-mode=packets --connbytes 1:6 -m mark ! --mark 0x40000000/0x40000000 -j NFQUEUE --queue-num 200 --queue-bypass
+    ip46tables -t mangle -A POSTROUTING -p udp -m multiport --dports 443,50000:50100,${GameFilter} -m mark ! --mark 0x40000000/0x40000000 -j NFQUEUE --queue-num 200 --queue-bypass
   '';
   systemd.services.zapret = {
     description = "DPI bypass service";
