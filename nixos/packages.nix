@@ -7,5 +7,7 @@
     vulkan-tools
     vulkan-loader
     pulseaudio
+    materialgram
+    vscodium
   ];
 }
