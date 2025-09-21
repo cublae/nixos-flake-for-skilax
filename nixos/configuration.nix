@@ -57,6 +57,7 @@
   programs = {
     dconf.enable = true;
     gpu-screen-recorder.enable = true;
+    firefox.enable = true;
   };
   system.stateVersion = "${curversion}"; # Did you read the comment?
 }

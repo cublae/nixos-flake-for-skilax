@@ -4,10 +4,13 @@
 {
   boot = {
     supportedFilesystems = [ "ntfs" ];
-    kernelParams = [ "nvidia_drm.fbdev=1" ];
+    kernelParams = [ ];
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
+    extraModulePackages = with config.boot.kernelPackages; [
+      rtl8821ce
+    ];
   };
 }
