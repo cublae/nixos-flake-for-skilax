@@ -36,15 +36,15 @@
       };
       modules = [
         ./nixos/configuration.nix
-        #home-manager.nixosModules.home-manager
-        #{ 
-        #  home-manager = {
-        #    useGlobalPkgs = true;
-        #    useUserPackages = true;
-        #    users.lagavulin = import (./. + "/home/home.nix") ;
-        #    extraSpecialArgs = { inherit curversion inputs; };
-        #  };
-        #}
+        home-manager.nixosModules.home-manager
+        { 
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            users.lagavulin = import (./. + "/home/home.nix") ;
+            extraSpecialArgs = { inherit curversion inputs; };
+          };
+        }
       ];
     };
   };

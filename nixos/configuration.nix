@@ -14,6 +14,7 @@
     ./modules/nekoray.nix
     ./modules/bootloader.nix
     ./modules/games.nix
+    ./modules/user.nix
   ];
 
   nix = {
