@@ -5,8 +5,8 @@
     ];
   home = {
     stateVersion = "${curversion}";
-    username = "skilax";
-    homeDirectory = "/home/skilax";
+    username = "lagavulin";
+    homeDirectory = "/home/lagavulin";
     sessionVariables = {
     };
   };

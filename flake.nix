@@ -30,7 +30,7 @@
       ];
     };
   in {
-    nixosConfigurations.skilax = inputs.nixpkgs.lib.nixosSystem {
+    nixosConfigurations.lagavulin = inputs.nixpkgs.lib.nixosSystem {
       specialArgs = {
       inherit inputs system pkgs curversion;
       };
@@ -41,7 +41,7 @@
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
-            users.skilax = import (./. + "/home/home.nix") ;
+            users.lagavulin = import (./. + "/home/home.nix") ;
             extraSpecialArgs = { inherit curversion inputs; };
           };
         }
